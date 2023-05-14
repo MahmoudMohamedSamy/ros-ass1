@@ -1,0 +1,2 @@
+set(lab3_MESSAGE_FILES "/home/mahmoud/robotics_ws/devel/share/lab3/msg/BakeCakeAction.msg;/home/mahmoud/robotics_ws/devel/share/lab3/msg/BakeCakeActionGoal.msg;/home/mahmoud/robotics_ws/devel/share/lab3/msg/BakeCakeActionResult.msg;/home/mahmoud/robotics_ws/devel/share/lab3/msg/BakeCakeActionFeedback.msg;/home/mahmoud/robotics_ws/devel/share/lab3/msg/BakeCakeGoal.msg;/home/mahmoud/robotics_ws/devel/share/lab3/msg/BakeCakeResult.msg;/home/mahmoud/robotics_ws/devel/share/lab3/msg/BakeCakeFeedback.msg")
+set(lab3_SERVICE_FILES "/home/mahmoud/robotics_ws/src/lab3/srv/Wish.srv")

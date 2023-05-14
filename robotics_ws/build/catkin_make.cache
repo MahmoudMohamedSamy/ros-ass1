@@ -1,0 +1,2 @@
+Assg1:kbot_description:lab3:my_robot
+-DCATKIN_DEVEL_PREFIX=/home/mahmoud/robotics_ws/devel -DCMAKE_INSTALL_PREFIX=/home/mahmoud/robotics_ws/install -G Unix Makefiles

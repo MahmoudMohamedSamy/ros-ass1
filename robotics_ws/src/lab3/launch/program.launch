@@ -1,0 +1,4 @@
+<launch>
+    <node name="App1" pkg="lab3" type="p1.py" />
+    <node name="App2" pkg="lab3" type="p2.py" output="screen" />
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/mahmoud/robotics_ws/devel
+
+Name: lab3
+Description: Description of lab3
+Version: 0.0.0
+Cflags: -I/home/mahmoud/robotics_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: 

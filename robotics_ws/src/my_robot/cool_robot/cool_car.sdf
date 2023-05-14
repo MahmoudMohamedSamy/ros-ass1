@@ -1,0 +1,215 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+
+	<material name="blue">
+		<color rgba="${255/255} ${108/255} ${10/255} 1.0"/>
+	</material>
+	
+	<material name="grey">
+		<color rgba="0.75 0.75 0.75 1"/>
+	</material>
+	
+	<model name="cool_car">
+		<static>false</static>
+		<link name='chassis'>
+			<pose>0 0 0.1 0 0 0</pose>
+			
+			<collision name='collision'>
+				<geometry>
+					<box>
+						<size>0.4 0.2 0.1</size>
+					</box>
+				</geometry>
+			</collision>
+			<visual name='visual'>
+				<geometry>
+					<box>
+						<size>0.4 0.2 0.1</size>
+					</box>
+				</geometry>
+			</visual>
+			
+			<collision name='caster_collision'>
+				<pose>-0.15 0 -0.05 0 0 0</pose>
+					<geometry>
+						<sphere>
+							<radius>0.05</radius>
+						</sphere>
+					</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0</mu>
+							<mu2>0</mu2>
+							<slip1>1.0</slip1>
+							<slip2>1.0</slip2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+	
+			<visual name='caster_visual'>
+				<pose>-0.15 0 -0.05 0 0 0</pose>
+					<geometry>
+						<sphere>
+							<radius>0.05</radius>
+						</sphere>
+					</geometry>
+			</visual>
+		</link>
+		
+		<link name='front_left_wheel'>
+			<pose>0.1 0.13 0.1 0 1.5707 1.5707</pose>
+			<collision name="collision">
+				<geometry>
+					<cylinder>
+						<radius>0.09</radius>
+						<length>0.07</length>
+					</cylinder>
+				</geometry>
+			</collision>			
+			<visual name="visual">
+				<geometry>
+					<cylinder>
+						<radius>0.09</radius>
+						<length>0.07</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<ambient>0.1 0.1 0.1 1</ambient>
+					<diffuse>0.1 0.1 0.2 1</diffuse>
+					<specular>0 0 0 0</specular>
+					<emissive>0 0 0 1</emissive>
+				</material>
+			</visual>
+		</link>
+		
+		<link name='front_right_wheel'>
+			<pose>0.1 -0.13 0.1 0 1.5707 1.5707</pose>
+			<collision name="collision">
+				<geometry>
+					<cylinder>
+						<radius>0.09</radius>
+						<length>0.07</length>
+					</cylinder>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+					<cylinder>
+						<radius>0.09</radius>
+						<length>0.07</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<ambient>0.1 0.1 0.1 1</ambient>
+					<diffuse>0.1 0.1 0.2 1</diffuse>
+					<specular>0 0 0 0</specular>
+					<emissive>0 0 0 1</emissive>
+				</material>
+			</visual>
+		</link>
+		
+		<joint type="revolute" name="front_left_wheel_hinge">
+			<pose>0 0 -0.03 0 0 0</pose>
+			<child>front_left_wheel</child>
+			<parent>chassis</parent>
+				<axis>
+					<xyz>0 1 0</xyz>
+				</axis>
+		</joint>
+		
+		<joint type="revolute" name="front_right_wheel_hinge">
+			<pose>0 0 0.03 0 0 0</pose>
+			<child>front_right_wheel</child>
+			<parent>chassis</parent>
+				<axis>
+					<xyz>0 1 0</xyz>
+				</axis>
+		</joint>
+		
+		<link name='rear_left_wheel'>
+			<pose>-0.1 0.13 0.1 0 1.5707 1.5707</pose>
+			<collision name="collision">
+				<geometry>
+					<cylinder>
+						<radius>0.09</radius>
+						<length>0.07</length>
+					</cylinder>
+				</geometry>
+			</collision>			
+			<visual name="visual">
+				<geometry>
+					<cylinder>
+						<radius>0.09</radius>
+						<length>0.07</length>
+
+					</cylinder>
+				</geometry>
+				<material>
+					<ambient>0.1 0.1 0.1 1</ambient>
+					<diffuse>0.1 0.1 0.2 1</diffuse>
+					<specular>0 0 0 0</specular>
+					<emissive>0 0 0 1</emissive>
+				</material>
+			</visual>
+		</link>
+		
+		<link name='rear_right_wheel'>
+			<pose>-0.1 -0.13 0.1 0 1.5707 1.5707</pose>
+			<collision name="collision">
+				<geometry>
+					<cylinder>
+						<radius>0.09</radius>
+						<length>0.07</length>
+					</cylinder>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+					<cylinder>
+						<radius>0.09</radius>
+						<length>0.07</length>
+					</cylinder>
+				</geometry>
+				 <material>
+					<ambient>0.1 0.1 0.1 1</ambient>
+					<diffuse>0.1 0.1 0.2 1</diffuse>
+					<specular>0 0 0 0</specular>
+					<emissive>0 0 0 1</emissive>
+				</material>
+			</visual>
+		</link>
+		
+		<joint type="revolute" name="rear_left_wheel_hinge">
+			<pose>0 0 -0.03 0 0 0</pose>
+			<child>rear_left_wheel</child>
+			<parent>chassis</parent>
+				<axis>
+					<xyz>0 1 0</xyz>
+				</axis>
+		</joint>
+		
+		<joint type="revolute" name="rear_right_wheel_hinge">
+			<pose>0 0 0.03 0 0 0</pose>
+			<child>rear_right_wheel</child>
+			<parent>chassis</parent>
+				<axis>
+					<xyz>0 1 0</xyz>
+				</axis>
+		</joint>
+		
+<!--		<plugin>
+			<topic>cmd_vel</topic>
+		</plugin>
+		-->
+<!--		<include>
+			<url>model://hokuyo</url>
+			<pose>0.2 0 0.2 0 0 0</pose>
+		</include>
+		<joint name="hokuyo_joint" type="fixed">
+			<child>hokuyo::link</child>
+			<parent>chassis</parent>
+		</joint> -->
+	</model>
+</sdf>
